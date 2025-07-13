@@ -9,7 +9,7 @@ Simulated using `gz_x500_depth` quadcopter model with forward-facing camera.
 ## ✨ Features
 
 * Offboard control using ROS 2 (`human_follower.py`)
-* PX4 SITL simulation with Gazebo Garden / Ionic
+* PX4 SITL simulation with Gazebo Ionic
 * Real-time object detection using YOLOv8
 * Optional integration with:
 
