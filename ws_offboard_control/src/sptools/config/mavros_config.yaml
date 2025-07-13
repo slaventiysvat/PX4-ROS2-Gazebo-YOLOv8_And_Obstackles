@@ -1,0 +1,23 @@
+mavros:
+  ros__parameters:
+    fcu_url: "udp://:14540@localhost:14557"
+    global_position_frame: "map"
+    local_position_frame: "base_link"
+    target_system_id: 1
+    target_component_id: 1
+    plugin_blacklist:
+      - rallypoint
+      - geofence
+    plugin_whitelist:
+      - global_position
+      - local_position
+      - setpoint_raw
+      - setpoint_position
+      - command
+      - set_mode
+      - home_position
+    state_frequency: 30.0
+    conn_timeout: 10.0
+    conn_heartbeat: 1.0
+    timesync_rate: 10.0
+    timesync_mode: MAVLINK

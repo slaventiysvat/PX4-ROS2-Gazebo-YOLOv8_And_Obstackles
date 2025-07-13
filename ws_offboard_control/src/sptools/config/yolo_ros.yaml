@@ -1,0 +1,15 @@
+/yolo/yolo_node:
+  ros__parameters:
+    model: "yolov8m.pt"
+    input_image_topic: "/camera"
+    use_tracking: true
+    use_3d: true
+    input_depth_topic: "/depth_camera"
+    input_depth_info_topic: "/camera_info"
+    threshold: 0.3
+    yolo_encoding: "bgr8"
+    image_reliability: 1
+    depth_image_reliability: 1
+    depth_info_reliability: 1
+    imgsz_height: 480
+    imgsz_width: 640

@@ -1,0 +1,333 @@
+<sdf version='1.10'>
+  <world name='custom_world'>
+    <physics type='ode'>
+      <max_step_size>0.0040000000000000001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>6.0000000000000002e-06 2.3e-05 -4.1999999999999998e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <gui fullscreen='false'>
+      <plugin name='3D View' filename='GzScene3D'>
+        <gz-gui>
+          <title>3D View</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='string' key='state'>docked</property>
+        </gz-gui>
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.5984631152222222 0.5984631152222222 0.5984631152222222</ambient_light>
+        <background_color>0.8984631152222222 0.8984631152222222 0.8984631152222222</background_color>
+        <camera_pose>278.08 -138.22 10 0.02 1 -0.65</camera_pose>
+      </plugin>
+      <plugin name='Entity context menu' filename='EntityContextMenuPlugin'>
+        <gz-gui>
+          <property key='state' type='string'>floating</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Scene Manager' filename='GzSceneManager'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Interactive view control' filename='InteractiveViewControl'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Camera Tracking' filename='CameraTracking'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='World control' filename='WorldControl'>
+        <gz-gui>
+          <title>World control</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='bool' key='resizable'>0</property>
+          <property type='double' key='height'>72</property>
+          <property type='double' key='width'>121</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='left' target='left'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </gz-gui>
+        <play_pause>1</play_pause>
+        <step>1</step>
+        <start_paused>1</start_paused>
+      </plugin>
+      <plugin name='World stats' filename='WorldStats'>
+        <gz-gui>
+          <title>World stats</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='bool' key='resizable'>0</property>
+          <property type='double' key='height'>110</property>
+          <property type='double' key='width'>290</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='right' target='right'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </gz-gui>
+        <sim_time>1</sim_time>
+        <real_time>1</real_time>
+        <real_time_factor>1</real_time_factor>
+        <iterations>1</iterations>
+      </plugin>
+      <plugin name='Shapes' filename='Shapes'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='x' type='double'>0</property>
+          <property key='y' type='double'>0</property>
+          <property key='width' type='double'>250</property>
+          <property key='height' type='double'>50</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+          <property key='cardBackground' type='string'>#666666</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Lights' filename='Lights'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='x' type='double'>250</property>
+          <property key='y' type='double'>0</property>
+          <property key='width' type='double'>150</property>
+          <property key='height' type='double'>50</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+          <property key='cardBackground' type='string'>#666666</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Transform control' filename='TransformControl'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='x' type='double'>0</property>
+          <property key='y' type='double'>50</property>
+          <property key='width' type='double'>250</property>
+          <property key='height' type='double'>50</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+          <property key='cardBackground' type='string'>#777777</property>
+        </gz-gui>
+        <legacy>false</legacy>
+      </plugin>
+      <plugin name='Screenshot' filename='Screenshot'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='x' type='double'>250</property>
+          <property key='y' type='double'>50</property>
+          <property key='width' type='double'>50</property>
+          <property key='height' type='double'>50</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+          <property key='cardBackground' type='string'>#777777</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='CopyPaste' filename='CopyPaste'>
+        <gz-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='x' type='double'>300</property>
+          <property key='y' type='double'>50</property>
+          <property key='width' type='double'>100</property>
+          <property key='height' type='double'>50</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+          <property key='cardBackground' type='string'>#777777</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Component inspector' filename='ComponentInspector'>
+        <gz-gui>
+          <property type='string' key='state'>docked_collapsed</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='Entity tree' filename='EntityTree'>
+        <gz-gui>
+          <property type='string' key='state'>docked_collapsed</property>
+        </gz-gui>
+      </plugin>
+      <plugin name='dis' filename='ImageDisplay'>
+        <gz-gui>
+          <property key='state' type='string'>docked_collapsed</property>
+        </gz-gui>
+        <topic>rgbd_camera/image</topic>
+      </plugin>
+      <plugin name='Entity tree' filename='EntityTree'/>
+    </gui>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <world_frame_orientation>ENU</world_frame_orientation>
+      <latitude_deg>47.397971057728974</latitude_deg>
+      <longitude_deg>8.5461637398001464</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/sonoma_raceway</uri>
+      <name>sonoma_raceway</name>
+      <pose>0 0 -4.7999999999999998 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/hatchback_blue</uri>
+      <name>hatchback_blue_1</name>
+      <pose>285.24000000000001 -146.97 2.5699999999999998 0.019999999999999997 -8.6736173798840355e-19 -0.65000000000000002</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>pickup_1</name>
+      <pose>273.43000000000001 -137.65000000000001 2.8599999999999999 0.019999999999999997 -8.6736173798840355e-19 -0.65000000000000002</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>pickup_2</name>
+      <pose>309.48562622070312 -157.96260070800781 2.1048910617828369 0.020000000673003369 2.5412727477913677e-10 -0.64999998629710798</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/casual_female</uri>
+      <name>female_1</name>
+      <pose>276.07999999999998 -128.22 2.8599999999999999 0 0 -0.69999999999999973</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>car_1</name>
+      <pose>283.4110107421875 -143.30120849609375 2.7699999809265137 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/casual_female</uri>
+      <name>female_2</name>
+      <pose>277.07999999999998 -137.84999999999999 2.77 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>car_2</name>
+      <pose>316.3284912109375 -171.21774291992188 1.9603161811828613 0.018999999484323501 -0.0080000003635501051 -0.64999994976759434</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/casual_female</uri>
+      <name>female_3</name>
+      <pose>293.20977783203125 -141.94638061523438 2.5468647480010986 0.018999999853501863 -0.00800000004336829 3.1399999999703456</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>car_3</name>
+      <pose>329.99026489257812 -172.99301147460938 1.5586570501327515 0.018999999853501863 -0.00800000004336829 3.1399999999703456</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/casual_female</uri>
+      <name>female_4</name>
+      <pose>16.27 -186 15.539999999999999 0.019000000000000013 -0.0080000000000000002 3.1400000000000006</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>car_4</name>
+      <pose>320 -167 1.8 0.019000000000000013 -0.0080000000000000002 3.1400000000000006</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/casual_female</uri>
+      <name>female_5</name>
+      <pose>294.06121826171875 -152.51597595214844 2.4499421119689941 0.018999999853501863 -0.00800000004336829 3.1399999999703456</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/pickup</uri>
+      <name>car_5</name>
+      <pose>341 -184 1.77 0.019000000000000013 -0.0080000000000000002 3.1400000000000006</pose>
+    </include>
+    <include>
+      <uri>file:///home/sstarokozhev/PX4-Autopilot/Tools/simulation/gz/models/x500_depth</uri>
+      <name>x500_depth_0</name>
+      <pose>268.0799749055958 -128.219977685424 3.0636587158675597 0.0127959947506384 0.015148330699874188 0.0001034124234825348</pose>
+    </include>
+    <light name='sunUTC' type='directional'>
+      <pose>0 0 500 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0.001 0.625 -0.78000000000000003</direction>
+      <diffuse>0.903999984 0.903999984 0.903999984 1</diffuse>
+      <specular>0.270999998 0.270999998 0.270999998 1</specular>
+      <attenuation>
+        <range>2000</range>
+        <linear>0</linear>
+        <constant>1</constant>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
